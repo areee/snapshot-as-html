@@ -1,5 +1,5 @@
-# Snapshot as HTML (v0.0.2)
-A chrome extension save webpage snapshot as html
+# Snapshot as HTML (v0.1.0)
+A Google Chrome extension save webpage snapshot as html
 一个将网页渲染结果保存为 HTML 代码的 chrome 插件
 
 When you need a large number of webpages to do some AI thing, it must help a lot!
