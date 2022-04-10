@@ -87,6 +87,9 @@ function omitScript(text) {
   return text.replace(/(<script (.|\n)+?<\/script>|<script>(.|\n)+?<\/script>)/gi, '<!-- script -->');
 }
 
+function omitStyle(text) {
+  return text.replace(/(<style (.|\n)+?<\/style>|<style>(.|\n)+?<\/style>)/gi,"<!-- style -->");
+}
 
 function omitIframeSrc(text) {
   return text.replace(/(<iframe [^>]*?src\s*?=\s*?['"]).+?(['"].+?<\/iframe>)/gi, '$1$2');
@@ -100,6 +103,7 @@ chrome.runtime.onMessage.addListener(
         .then(function() {
           text = getHTML();
           text = omitScript(text);
+          text = omitStyle(text);
           text = omitIframeSrc(text);
           text = normalizeURL(text);
     
